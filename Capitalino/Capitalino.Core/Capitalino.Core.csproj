@@ -98,8 +98,10 @@
     <Compile Include="Coordinates\CoordinConvert.cs" />
     <Compile Include="EditorTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publication\CptPaperInfo.cs" />
     <Compile Include="Publication\CptPlotEngine.cs" />
     <Compile Include="Publication\CptPlotOptions.cs" />
+    <Compile Include="Publication\CptRecommendedPlotConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

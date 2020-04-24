@@ -2,10 +2,10 @@
 using Autodesk.Windows;
 using System;
 using System.Linq;
-[assembly: ExtensionApplication(typeof(Capitalino.Traiano.AppConfig))]
+[assembly: ExtensionApplication(typeof(Capitalino.Traiano.AppConfigs))]
 namespace Capitalino.Traiano
 {
-    class AppConfig : IExtensionApplication
+    class AppConfigs : IExtensionApplication
     {
         public void Initialize()
         {

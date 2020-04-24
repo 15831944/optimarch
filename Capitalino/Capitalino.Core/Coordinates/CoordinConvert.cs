@@ -31,5 +31,11 @@ namespace Capitalino.Core.Coordinates
         {
             return new Extents2d(origin.MinPoint.TransformByTarget(), origin.MaxPoint.TransformByTarget());
         }
+        public static Extents2d ReduceDimensions(this Extents3d origin)
+        {
+            var max = origin.MaxPoint;
+            var min = origin.MinPoint;
+            return new Extents2d(min.X, min.Y, max.X, max.Y);
+        }
     }
 }

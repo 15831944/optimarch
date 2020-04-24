@@ -10,5 +10,6 @@ namespace Capitalino.Core.Publication
         public CustomScale CustomPrintScale { get; set; }
         public bool ScaleToFit { get; set; }
         public Extents2d PlotWindowArea { get; set; }
+        public PlotRotation PlotRotation { get; set; }
     }
 }

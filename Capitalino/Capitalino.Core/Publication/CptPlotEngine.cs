@@ -11,19 +11,20 @@ namespace Capitalino.Core.Publication
     {
         private readonly Layout layout;
         private readonly short defaultbkpltVar;
-        private const string plotconfig = "AutoCad PDF (High Quality Print).pc3";
+        private readonly string plotConfig;
         public string[] CanonicalMediaNameList { get; }
         public string[] PlotStyleSheetNameList { get; }
 
-        public CptPlotEngine(Layout layout)
+        public CptPlotEngine(Layout layout, string plotConfig)
         {
             this.layout = layout;
+            this.plotConfig = plotConfig;
             defaultbkpltVar = (short)Application.GetSystemVariable("BACKGROUNDPLOT");
             using (var ps = new PlotSettings(layout.ModelType))
             {
                 ps.CopyFrom(layout);
                 var psv = PlotSettingsValidator.Current;
-                psv.SetPlotConfigurationName(ps, plotconfig, null);
+                psv.SetPlotConfigurationName(ps, plotConfig, null);
                 psv.RefreshLists(ps);
                 var mcol = psv.GetCanonicalMediaNameList(ps);
                 CanonicalMediaNameList = new string[mcol.Count];
@@ -50,17 +51,13 @@ namespace Capitalino.Core.Publication
                         var minpt = options.PlotWindowArea.MinPoint.TransformByTarget();
                         var maxpt = options.PlotWindowArea.MaxPoint.TransformByTarget();
 
-                        var w = maxpt.X - minpt.X;
-                        var h = maxpt.Y - minpt.Y;
-                        var rotation = w > h ? PlotRotation.Degrees000 : PlotRotation.Degrees090;
-
-                        psv.SetPlotConfigurationName(ps, plotconfig, options.CanonicalMediaName);
+                        psv.SetPlotConfigurationName(ps, plotConfig, options.CanonicalMediaName);
                         psv.SetCurrentStyleSheet(ps, options.CurrentStyleSheet);
                         psv.SetPlotWindowArea(ps, new Extents2d(minpt, maxpt));
                         psv.SetPlotType(ps, PlotType.Window);
                         psv.SetPlotCentered(ps, true);
                         psv.SetPlotPaperUnits(ps, PlotPaperUnit.Millimeters);
-                        psv.SetPlotRotation(ps, rotation);
+                        psv.SetPlotRotation(ps, options.PlotRotation);
                         if (options.ScaleToFit)
                         {
                             psv.SetUseStandardScale(ps, true);
