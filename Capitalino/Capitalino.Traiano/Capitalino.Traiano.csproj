@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9806E3C1-1A5E-49BE-B113-75EA871230AC}</ProjectGuid>
+    <ProjectGuid>{3BD86A21-6BD3-40D8-AC8B-81E2B39EF2D7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Capitalino.Core</RootNamespace>
-    <AssemblyName>cptcr</AssemblyName>
+    <RootNamespace>Capitalino.Traiano</RootNamespace>
+    <AssemblyName>cpttrj</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -94,15 +95,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlockMethods.cs" />
-    <Compile Include="Coordinates\CoordinConvert.cs" />
-    <Compile Include="EditorTool.cs" />
+    <Compile Include="App_Start\AppConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Publication\CptPlotEngine.cs" />
-    <Compile Include="Publication\CptPlotOptions.cs" />
+    <Compile Include="TraiRibbonTab.cs" />
+    <Compile Include="TraiRibbonTab.g.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Capitalino.Core\Capitalino.Core.csproj">
+      <Project>{9806e3c1-1a5e-49be-b113-75ea871230ac}</Project>
+      <Name>Capitalino.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Handlers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

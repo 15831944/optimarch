@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capitalino.Core", "Capitali
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capitalino.Work", "Capitalino.Work\Capitalino.Work.csproj", "{AD0D4FA2-3AB8-40E2-88A6-8AFB466E102E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capitalino.Traiano", "Capitalino.Traiano\Capitalino.Traiano.csproj", "{3BD86A21-6BD3-40D8-AC8B-81E2B39EF2D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AD0D4FA2-3AB8-40E2-88A6-8AFB466E102E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD0D4FA2-3AB8-40E2-88A6-8AFB466E102E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD0D4FA2-3AB8-40E2-88A6-8AFB466E102E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BD86A21-6BD3-40D8-AC8B-81E2B39EF2D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BD86A21-6BD3-40D8-AC8B-81E2B39EF2D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BD86A21-6BD3-40D8-AC8B-81E2B39EF2D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BD86A21-6BD3-40D8-AC8B-81E2B39EF2D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
