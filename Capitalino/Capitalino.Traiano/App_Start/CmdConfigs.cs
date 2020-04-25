@@ -5,6 +5,8 @@ namespace Capitalino.Traiano
     public class CmdConfigs
     {
         [CommandMethod("ZPRINTSINGLE")]
-        public static void ZPRINTSINGLE() => PublicationCmds.PrintSingleFrame();
+        public static void ZPRINTSINGLE() => PublicationCmds.PrintSingle();
+        [CommandMethod("ZPRINTMULTI")]
+        public static void ZPRINTMULTI() => PublicationCmds.PrintMulti();
     }
 }
