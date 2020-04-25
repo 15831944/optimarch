@@ -14,7 +14,7 @@ namespace Capitalino.Traiano
 {
 	internal static class PublicationCmds
     {
-		private static Document doc = Application.DocumentManager.MdiActiveDocument;
+		private static Document doc => Application.DocumentManager.MdiActiveDocument;
         internal static void PrintSingle()
         {
 			try
